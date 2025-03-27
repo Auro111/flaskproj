@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Gatti{% endblock %}
+
+{% block header %}Gatti{% endblock %}
+
+{% block content %}
+<section class="pet-list">
+  {% for pet in pets %}
+    {% if pet.pet_type == 'cat' %}
+    <div class="pet-item">
+      <h3>{{ pet.name }}</h3>
+      <img src="{{ pet.image_url }}" alt="Immagine di {{ pet.name }}">
+      <p>{{ pet.description }}</p>
+    </div>
+    {% endif %}
+  {% endfor %}
+</section>
+{% endblock %}
